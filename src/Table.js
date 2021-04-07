@@ -24,8 +24,6 @@ import { Typography,Grid, Button,Menu,MenuItem } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVertOutlined';
-import {useDispatch,useSelector} from 'react-redux'
-import * as Actions from './store/Actions'
 import './Table.css'
 
 const tableIcons = {
@@ -606,7 +604,7 @@ const Table = () => {
     const [page,setPage]=useState(0)
     const [anchorEl, setAnchorEl] = useState(null);
     const [files,setFiles] = useState('');
-    const dispatch=useDispatch()
+  
     const isMounted = useRef(false);
 
     const getData=useCallback(()=>{
@@ -625,9 +623,9 @@ const Table = () => {
         .then(function(myJson) {
           console.log(myJson);
           setData(myJson)
-          dispatch(Actions.upload(myJson))
+        
         });
-    },[files,dispatch])
+    },[files])
 const handleChange = e => {
   
   const file=e.target.files[0];

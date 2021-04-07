@@ -9,19 +9,14 @@ import Glass from './Glass'
 import Users from './Users'
 import Nav from './Nav';
 import Footer from './Footer'
-import {Provider} from 'react-redux'
-import {createStore,applyMiddleware,combineReducers} from 'redux'
-import ReduxThunk from 'redux-thunk'
-import Reducer from './store/Reducer'
+
 function App() {
-  const reducer=combineReducers({
-    red:Reducer
-  })
+  
   document.title='Manage'
-  const store=createStore(reducer,applyMiddleware(ReduxThunk))
+  
   return (
     <div className="App">
-    <Provider store={store}>
+   
       <Router>
       
       <Nav/>
@@ -34,7 +29,7 @@ function App() {
         <Footer/>
     
       </Router>
-      </Provider>
+  
     </div>
   );
 }
