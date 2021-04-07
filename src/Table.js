@@ -751,11 +751,13 @@ const handleChange = e => {
         open={open}
         onClose={handleClose}
         style={{
-        marginTop:200,
-        marginLeft:1220
+        marginTop:240,
+        marginLeft:1250,
+        width:180
+
         }}
       >  
-       <MenuItem >  <Button
+       <MenuItem  >  <Button
   variant='text'
   component="label"
 >
